@@ -27,8 +27,8 @@ void	ft_dda(t_main *a, t_draw *p, float h)
 	p->steps = abs(p->dx) > abs(p->dy) ? abs(p->dx) : abs(p->dy);
 	p->xinc = p->dx / (double)p->steps;
 	p->yinc = p->dy / (double)p->steps;
-	p->x = p->x1;
-	p->y = p->y1;
+	p->x = (float)p->x1;
+	p->y = (float)p->y1;
 	while (i <= p->steps)
 	{
 		if (h > 0)

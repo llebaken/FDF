@@ -30,6 +30,8 @@ void	ft_getxy(t_main *a)
 			a->x++;
 		i++;
 		a->y++;
+		free(line);
+		ft_free2dchar(str);
 	}
 	close(a->fd);
 }

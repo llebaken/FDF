@@ -6,7 +6,7 @@
 #    By: llebaken <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/22 12:03:11 by llebaken          #+#    #+#              #
-#    Updated: 2017/12/18 13:30:44 by llebaken         ###   ########.fr        #
+#    Updated: 2018/08/15 15:20:30 by llebaken         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,8 @@ SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c \
 	  ft_strclr.c ft_striter.c ft_striteri.c ft_toupper.c ft_putchar.c ft_putstr.c \
 	  ft_putendl.c  ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 	  ft_strdel.c ft_strmap.c ft_strequ.c ft_strnequ.c ft_strjoin.c ft_printmap.c \
-	  ft_strsub.c ft_strjoin.c ft_strmapi.c ft_putnbr.c \
-	  ft_itoa.c ft_strsplit.c ft_strtrim.c ft_isspace.c\
+	  ft_strsub.c ft_strjoin.c ft_strmapi.c ft_putnbr.c ft_free2dint.c \
+	  ft_itoa.c ft_strsplit.c ft_strtrim.c ft_isspace.c ft_free2dchar.c  \
 
 OBJ = $(SRC:.c=.o)
 

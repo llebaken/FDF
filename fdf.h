@@ -6,7 +6,7 @@
 /*   By: llebaken <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/19 15:44:50 by llebaken          #+#    #+#             */
-/*   Updated: 2018/07/19 15:45:58 by llebaken         ###   ########.fr       */
+/*   Updated: 2018/08/15 15:11:24 by llebaken         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ typedef struct		s_draw
 	int				x2;
 	int				y1;
 	int				y2;
-	int				cx;
-	int				cy;
 }					t_draw;
 
 typedef struct		s_norm
@@ -66,7 +64,7 @@ int					get_next_line(const int fd, char **line);
 void				ft_prepdda(t_main *a);
 void				ft_dda(t_main *a, t_draw *p, float h);
 void				ft_allocatemem(t_main *a);
-int					my_key_funct(int keycode, t_main *a);
+int					ft_key_funct(int keycode, t_main *a);
 void				ft_fillmapb(t_main *a);
 void				ft_fillmapa(t_main *a);
 void				ft_drawmap(t_main *a);

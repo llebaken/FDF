@@ -53,6 +53,8 @@ void	ft_fillmapa(t_main *a)
 			i++;
 			x++;
 		}
+		ft_free2dchar(st);
+		free(str);
 		y++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: llebaken <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 12:24:07 by llebaken          #+#    #+#             */
-/*   Updated: 2018/07/19 15:18:41 by llebaken         ###   ########.fr       */
+/*   Updated: 2018/08/15 15:25:56 by llebaken         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <unistd.h>
 
 int		ft_atoi(const char *str);
+void	ft_free2dint(int **st, int size);
+void	ft_free2dchar(char **st);
 int		ft_isspace(char c);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);

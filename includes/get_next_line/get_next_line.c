@@ -6,13 +6,13 @@
 /*   By: llebaken <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/06 09:16:17 by llebaken          #+#    #+#             */
-/*   Updated: 2018/07/06 10:12:55 by llebaken         ###   ########.fr       */
+/*   Updated: 2018/08/15 15:44:16 by llebaken         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static int	ft_read_and_count(const int fd, char **holder)
+static int		ft_read_and_count(const int fd, char **holder)
 {
 	char	*lin;
 	char	*tmp;
@@ -33,7 +33,7 @@ static int	ft_read_and_count(const int fd, char **holder)
 	return (counter);
 }
 
-static int	ft_precheck(char **holder, const int fd, char **eol)
+static int		ft_precheck(char **holder, const int fd, char **eol)
 {
 	int	rvalue;
 
@@ -50,7 +50,17 @@ static int	ft_precheck(char **holder, const int fd, char **eol)
 	return (rvalue);
 }
 
-int			get_next_line(const int fd, char **line)
+void			ft_temp_holder(char **holder, char **eol)
+{
+	char *temp;
+
+	temp = *holder;
+	*holder = ft_strjoin(*holder, "\n");
+	free(temp);
+	*eol = ft_strchr(*holder, '\n');
+}
+
+int				get_next_line(const int fd, char **line)
 {
 	static char	*holder = NULL;
 	char		*eol;
@@ -65,8 +75,7 @@ int			get_next_line(const int fd, char **line)
 		{
 			if (ft_strlen(holder) == 0)
 				return (0);
-			holder = ft_strjoin(holder, "\n");
-			eol = ft_strchr(holder, '\n');
+			ft_temp_holder(&holder, &eol);
 		}
 		else if (counter < 0)
 			return (-1);
@@ -74,6 +83,7 @@ int			get_next_line(const int fd, char **line)
 	}
 	*line = ft_strsub(holder, 0, ft_strlen(holder) - ft_strlen(eol));
 	free(holder);
-	holder = ft_strdup(&(eol[1]));
+	eol = ft_strdup(&(eol[1]));
+	holder = eol;
 	return (1);
 }
